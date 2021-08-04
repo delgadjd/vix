@@ -1,0 +1,31 @@
+<h1>
+    <form action='/results/' method="POST">
+        <input type="text" placeholder="Enter a search term" name='keyword'>
+        <button type="submit">Get News</button>
+
+
+    </form>
+</h1>
+<table frame="box" rules="cols" class="table">
+    <thead>
+        <tr>
+            <th style="padding-left: 1em; padding-right: 1em; text-align: center">Currency Name</th>
+            <th style="padding-left: 1em; padding-right: 1em; text-align: center">Currency Price</th>
+            <th style="padding-left: 1em; padding-right: 1em; text-align: center">Currency 1h Change</th>
+            <th style="padding-left: 1em; padding-right: 1em; text-align: center">Currency 24h Change</th>
+            <th style="padding-left: 1em; padding-right: 1em; text-align: center">Currency 7d Change</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for coin in coins %}
+            <tr>
+            <td style="padding-left: 1em; padding-right: 1em; text-align: center; vertical-align: top">{{coin[0]}}</td>
+            <td style="padding-left: 1em; padding-right: 1em; text-align: center; vertical-align: top">{{coin[1]}}</td>
+            <td style="padding-left: 1em; padding-right: 1em; text-align: center; vertical-align: top">{{coin[2]}}</td>
+            <td style="padding-left: 1em; padding-right: 1em; text-align: center; vertical-align: top">{{coin[3]}}</td>
+            <td style="padding-left: 1em; padding-right: 1em; text-align: center; vertical-align: top">{{coin[4]}}</td>
+        </tr>
+        {% endfor %}
+
+    </tbody>
+</table>
